@@ -51,51 +51,39 @@ const team = [
     }
 ];
 
-// Stampa dati membri del team in console
-// Itera gli elementi dell'array
-for (let i = 0; i < team.length; i++) {
-
-    console.log (`Member n. ${i+1}`);
-
-    // Stampa tutte le proprieta' dell'oggetto corrente
-    for (let key in team[i]) {
-        console.log (`${key}: ${team[i][key]}`);
-    }
-
-    console.log ("--------------");
-
-}
-
 // Stampa sul DOM le informazioni dei membri
-const table = document.querySelector("#membersTable");
+const cardsContainer = document.querySelector(".cardsContainer");
 
 // Itera gli elementi dell'array
 for (let i = 0; i < team.length; i++) {
 
-    // Crea una nuova riga per la tabella
-    const newRow = document.createElement("tr");
+    // Crea una nuova card
+    const newCard = document.createElement("div");
+    newCard.classList.add("card");
 
     // Stampa tutte le proprieta' dell'oggetto corrente
     for (let key in team[i]) {
 
-        // Crea una nuova cella della tabella
-        const newInfo = document.createElement("td");
+        const newInfo = document.createElement("div");
+        newInfo.innerText = team[i][key];
 
-        if (key != "Image Url") {
-            newInfo.innerText = team[i][key];
+        if (key == "First Name") {
+            newInfo.classList.add("cardFirstName");
         }
-        else {
-            newInfo.innerHTML = `<img src="img/${team[i][key]}" alt="">`;
+        else if (key == "Last Name") {
+            newInfo.classList.add("cardLastName");
         }
-        
-        // Scrive nella nuova cella il dato
-
-        // Aggiunge la nuova cella alla riga
-        newRow.append(newInfo);
-
-    }
+        else if (key == "Role") {
+            newInfo.classList.add("cardRole");
+        }
+        else if (key == "Image Url") {
+            newInfo.innerHTML = `<img src="img/${team[i][key]}">`;
+            newInfo.classList.add("cardImg");
+        }
+    
+        newCard.append(newInfo);
+    } //Fine for...in
 
     // Aggiunge la nuova riga alla tabella
-    table.append(newRow);
-
-}
+    cardsContainer.append(newCard);
+} //Fine for

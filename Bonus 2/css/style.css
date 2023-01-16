@@ -1,4 +1,4 @@
-/* BONUS 1*/
+/* BONUS 2*/
 /* CSS RESET*/
 * {
     margin: 0;
@@ -6,16 +6,95 @@
     box-sizing: border-box;
 }
 
-table {
-    border-collapse: collapse;
+body {
+    font-family: 'Nunito Sans', sans-serif;
+
+    background-color: #e1e2ef;
 }
 
-td {
-    padding: 0.25rem 1.5rem;
-    border: 1px solid black;
+.container {
+    max-width: 1200px;
+    padding: 1rem;
+    margin: 0 auto;
+}
+
+.container > h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #000807;
+
+    margin-bottom: 1rem;
+}
+
+.cardsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+
+    padding: 1rem;
+}
+
+.card {
+    width: calc((100% - 5rem - 180px) / 3);
+    max-width: 420px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 0.75rem;
+
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px 5px rgba(0, 0, 0, 0.1);
+    background-color: #FBF9FF;
+}
+
+.card .cardImg {
+    order: 1;
+    margin-bottom: 0.5rem;
 }
 
 img {
     display: block;
-    max-height: 80px;
+    width: 100%;
+
+    object-fit: cover;
+    margin: 0 auto;
+
+    border-radius: 15px;
+}
+
+.card .cardFirstName {
+    order: 2;
+    font-size: 0.9rem;
+}
+
+.card .cardLastName {
+    order: 3;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    margin-bottom: 0.5rem;
+}
+
+.card .cardRole {
+    order: 4;
+    color: #7477b8;
+}
+
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1000px){
+    .card {
+        width: calc((100% - 2.5rem) / 2);
+    }
+}
+
+@media screen and (max-width: 650px){
+    .card {
+        width: 100%;
+    }
 }
