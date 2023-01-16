@@ -4,3 +4,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+table {
+    border-collapse: collapse;
+}
+
+td {
+    padding: 0.25rem 1.5rem;
+    border: 1px solid black;
+}

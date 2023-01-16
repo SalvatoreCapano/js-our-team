@@ -51,13 +51,41 @@ const team = [
 // Itera gli elementi dell'array
 for (let i = 0; i < team.length; i++) {
 
-    console.log (`Member n. ${i+1}`)
+    console.log (`Member n. ${i+1}`);
 
     // Stampa tutte le proprieta' dell'oggetto corrente
     for (let key in team[i]) {
-        console.log (`${key}: ${team[i][key]}`)
+        console.log (`${key}: ${team[i][key]}`);
     }
 
-    console.log ("--------------")
+    console.log ("--------------");
+
+}
+
+// Stampa sul DOM le informazioni dei membri
+const table = document.querySelector("#membersTable");
+
+// Itera gli elementi dell'array
+for (let i = 0; i < team.length; i++) {
+
+    // Crea una nuova riga per la tabella
+    const newRow = document.createElement("tr");
+
+    // Stampa tutte le proprieta' dell'oggetto corrente
+    for (let key in team[i]) {
+
+        // Crea una nuova cella della tabella
+        const newInfo = document.createElement("td");
+        
+        // Scrive nella nuova cella il dato
+        newInfo.innerText = team[i][key];
+
+        // Aggiunge la nuova cella alla riga
+        newRow.append(newInfo);
+
+    }
+
+    // Aggiunge la nuova riga alla tabella
+    table.append(newRow);
 
 }
