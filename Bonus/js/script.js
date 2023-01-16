@@ -5,6 +5,10 @@ STEPS:
     2.1 Nome, ruolo, foto
 3. Stampare in console nome, cognome, ruolo, stringa foto per ogni membro
 4. Stampare nel DOM nome, cognome, ruolo, stringa foto per ogni membro del team
+
+BONUS:
+1. Stampare la proprieta' Image Url come immagine
+2. Organizzare i membri in card
 */
 
 // Dichiarazione ed inizializzazione array dati membri del team
@@ -25,7 +29,7 @@ const team = [
         "First Name": "Walter",
         "Last Name": "Gordon",
         "Role": "Office Manager",
-        "Image Url": "walter-gordon-office-manager.jpgg"
+        "Image Url": "walter-gordon-office-manager.jpg"
     },
     {
         "First Name": "Angela",
@@ -37,7 +41,7 @@ const team = [
         "First Name": "Scott",
         "Last Name": "Estrada",
         "Role": "Developer",
-        "Image Url": " scott-estrada-developer.jpg"
+        "Image Url": "scott-estrada-developer.jpg"
     },
     {
         "First Name": "Barbara",
@@ -76,9 +80,15 @@ for (let i = 0; i < team.length; i++) {
 
         // Crea una nuova cella della tabella
         const newInfo = document.createElement("td");
+
+        if (key != "Image Url") {
+            newInfo.innerText = team[i][key];
+        }
+        else {
+            newInfo.innerHTML = `<img src="img/${team[i][key]}" alt="">`;
+        }
         
         // Scrive nella nuova cella il dato
-        newInfo.innerText = team[i][key];
 
         // Aggiunge la nuova cella alla riga
         newRow.append(newInfo);

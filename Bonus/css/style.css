@@ -1,3 +1,4 @@
+/* BONUS 1*/
 /* CSS RESET*/
 * {
     margin: 0;
@@ -12,4 +13,9 @@ table {
 td {
     padding: 0.25rem 1.5rem;
     border: 1px solid black;
+}
+
+img {
+    display: block;
+    max-height: 80px;
 }
