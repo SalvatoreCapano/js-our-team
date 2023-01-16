@@ -7,41 +7,57 @@ STEPS:
 4. Stampare nel DOM nome, cognome, ruolo, stringa foto per ogni membro del team
 */
 
+// Dichiarazione ed inizializzazione array dati membri del team
 const team = [
     {
-        firstName: "Wayne",
-        lastName: "Barnett",
-        role: "Founder & CEO",
-        imgUrl: "wayne-barnett-founder-ceo.jpg"
+        "First Name": "Wayne",
+        "Last Name": "Barnett",
+        "Role": "Founder & CEO",
+        "Image Url": "wayne-barnett-founder-ceo.jpg"
     },
     {
-        firstName: "Angela",
-        lastName: "Caroll",
-        role: "Chief Editor",
-        imgUrl: "angela-caroll-chief-editor.jpg"
+        "First Name": "Angela",
+        "Last Name": "Caroll",
+        "Role": "Chief Editor",
+        "Image Url": "angela-caroll-chief-editor.jpg"
     },
     {
-        firstName: "Walter",
-        lastName: "Gordon",
-        role: "Office Manager",
-        imgUrl: "walter-gordon-office-manager.jpgg"
+        "First Name": "Walter",
+        "Last Name": "Gordon",
+        "Role": "Office Manager",
+        "Image Url": "walter-gordon-office-manager.jpgg"
     },
     {
-        firstName: "Angela",
-        lastName: "Lopez",
-        role: "Social Media Manager",
-        imgUrl: "angela-lopez-social-media-manager.jpg"
+        "First Name": "Angela",
+        "Last Name": "Lopez",
+        "Role": "Social Media Manager",
+        "Image Url": "angela-lopez-social-media-manager.jpg"
     },
     {
-        firstName: "Scott",
-        lastName: "Estrada",
-        role: "Developer",
-        imgUrl: " scott-estrada-developer.jpg"
+        "First Name": "Scott",
+        "Last Name": "Estrada",
+        "Role": "Developer",
+        "Image Url": " scott-estrada-developer.jpg"
     },
     {
-        firstName: "Barbara",
-        lastName: "Ramos",
-        role: "Graphic Designer",
-        imgUrl: "barbara-ramos-graphic-designer.jpg"
+        "First Name": "Barbara",
+        "Last Name": "Ramos",
+        "Role": "Graphic Designer",
+        "Image Url": "barbara-ramos-graphic-designer.jpg"
     }
 ];
+
+// Stampa dati membri del team in console
+// Itera gli elementi dell'array
+for (let i = 0; i < team.length; i++) {
+
+    console.log (`Member n. ${i+1}`)
+
+    // Stampa tutte le proprieta' dell'oggetto corrente
+    for (let key in team[i]) {
+        console.log (`${key}: ${team[i][key]}`)
+    }
+
+    console.log ("--------------")
+
+}
